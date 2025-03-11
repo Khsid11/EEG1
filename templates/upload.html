@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload OpenBCI File</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.8), rgba(0, 0, 139, 0.8)), url('https://via.placeholder.com/1920x1080');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 450px;
+        }
+
+        .loading-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-button .brain-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            margin-left: -20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, rgba(59,130,246,0.8) 100%);
+            animation: pulse 1.5s infinite;
+            display: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+        }
+
+        .loading-button.loading .brain-spinner {
+            display: block;
+        }
+
+        .loading-button.loading button {
+            opacity: 0.5;
+        }
+
+        .counting-text {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            color: #3b82f6;
+            display: none;
+        }
+
+        .loading-button.loading .counting-text {
+            display: block;
+        }
+
+        .progress-bar {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            background-color: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .loading-button.loading .progress-bar {
+            display: block;
+        }
+
+        .progress-bar .brain-emoji {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            animation: moveBrain 5s infinite;
+        }
+
+        @keyframes moveBrain {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .progress-bar .loading-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #3b82f6;
+            font-size: 1rem;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .upload-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .upload-icon img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="container mx-auto text-center p-8 shadow-lg rounded-lg bg-white">
+        <h1 class="text-4xl font-bold text-gray-800 mb-6">Upload OpenBCI File</h1>
+        <p class="text-gray-600 mb-8">Upload your OpenBCI file to generate a detailed report. Our system will analyze the data and provide insights.</p>
+        <form id="upload-form" action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data" class="space-y-6">
+            <div class="mb-4 upload-icon">
+                <label for="file-upload" class="cursor-pointer">
+                    <img src="https://cdn-icons-png.flaticon.com/128/2716/2716054.png" alt="Upload Icon">
+                </label>
+                <input id="file-upload" type="file" name="file" class="hidden" required>
+            </div>
+            <div class="flex items-center justify-center loading-button">
+                <button type="submit" class="bg-gradient-to-r from-red-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md shadow-md hover:scale-105 transition-transform">
+                    Upload and Generate Report
+                </button>
+                <div class="brain-spinner"></div>
+                <div class="counting-text" id="counting-text">Processing 🧠...</div>
+            </div>
+        </form>
+        <div class="mt-6">
+            <p class="text-gray-600">Need help? Contact our support team at <a href="mailto:support@example.com" class="text-blue-500">support@example.com</a>.</p>
+        </div>
+    </div>
+    <div class="footer mt-8">
+        <!-- <p>&copy; 2023 Your Company. All rights reserved.</p> -->
+    </div>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function(event) {
+            const loadingButton = document.querySelector('.loading-button');
+            loadingButton.classList.add('loading');
+        });
+    </script>
+</body>
+</html>

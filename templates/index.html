@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEG Analysis Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gradient-border {
+            background: linear-gradient(270deg, #ff7e5f, #feb47b);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
+        }
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        .box-shadow-hover {
+            transition: box-shadow 0.3s ease;
+        }
+        .box-shadow-hover:hover {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-sans">
+    <div class="container mx-auto py-10 px-4">
+        <!-- Header -->
+        <h1 class="text-4xl font-bold text-center mb-2" data-aos="fade-down"> Our AI Driven EEG Analysis Services</h1>
+        <p class="text-lg text-center text-gray-600 mb-12" data-aos="fade-up">Professional EEG analysis for medical and research applications</p>
+
+        <!-- Basic Analysis Section -->
+        <div class="flex flex-wrap items-center mb-24" data-aos="fade-right" data-aos-delay="100">
+            <div class="w-full lg:w-1/2 p-4">
+                <h2 class="text-3xl font-bold mb-4">Basic Analysis</h2>
+                <p class="mb-4 text-gray-700">Our basic EEG analysis provides fundamental insights into brain activity patterns. This service is ideal for initial assessments and routine monitoring.</p>
+                <p class="mb-4 text-gray-700">The analysis includes frequency band power calculations, artifact detection, and a summary report with key metrics that can be easily interpreted.</p>
+                <div class="mt-6">
+                    <a href="#pricing" class="bg-gradient-to-r from-red-500 to-blue-500 text-white font-bold py-2 px-6 rounded hover:opacity-90 transition-opacity">Learn More</a>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 p-4">
+                <img src="https://media.istockphoto.com/id/175482535/photo/cardiogram-chart.webp?a=1&b=1&s=612x612&w=0&k=20&c=e5nc3w3_xwpKAxeD-_N8ax1i0oEx-_Fba4gl3zm27CQ=" alt="Basic Analysis" class="w-full rounded-lg shadow-lg hover-scale">
+            </div>
+        </div>
+
+        <!-- Intermediate Seizure Analysis Section -->
+        <div class="flex flex-wrap items-center mb-24" data-aos="fade-left" data-aos-delay="100">
+            <div class="w-full lg:w-1/2 p-4 order-2 lg:order-1">
+                <img src="https://media.istockphoto.com/id/1224202684/photo/multi-ethnic-research-team-studying-dna-mutations-female-doctor-in-foreground.webp?a=1&b=1&s=612x612&w=0&k=20&c=12_r0hFDLmFs1cBsXR_Xl8SXrKxvBS47JOIjm_7MWVw=" alt="Seizure Analysis" class="w-full rounded-lg shadow-lg hover-scale">
+            </div>
+            <div class="w-full lg:w-1/2 p-4 order-1 lg:order-2">
+                <h2 class="text-3xl font-bold mb-4">Intermediate Seizure Analysis</h2>
+                <p class="mb-4 text-gray-700">Our intermediate seizure analysis goes beyond basic EEG readings to identify patterns consistent with epileptiform activity and seizure events.</p>
+                <p class="mb-4 text-gray-700">This service includes automated seizure detection algorithms, detailed event classification, and comprehensive reporting with clinical correlations.</p>
+                <div class="mt-6">
+                    <a href="#pricing" class="bg-gradient-to-r from-red-500 to-blue-500 text-white font-bold py-2 px-6 rounded hover:opacity-90 transition-opacity">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced EEG Analysis Section -->
+        <div class="flex flex-wrap items-center mb-24" data-aos="fade-right" data-aos-delay="100">
+            <div class="w-full lg:w-1/2 p-4">
+                <h2 class="text-3xl font-bold mb-4">Advanced EEG Analysis</h2>
+                <p class="mb-4 text-gray-700">Our advanced EEG analysis provides the most comprehensive assessment of brain activity, utilizing cutting-edge algorithms and expert interpretation.</p>
+                <p class="mb-4 text-gray-700">This premium service includes source localization, connectivity analysis, machine learning-based pattern recognition, and detailed reporting with actionable insights.</p>
+                <div class="mt-6">
+                    <a href="#pricing" class="bg-gradient-to-r from-red-500 to-blue-500 text-white font-bold py-2 px-6 rounded hover:opacity-90 transition-opacity">Learn More</a>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 p-4">
+                <img src="https://media.istockphoto.com/id/1221400480/photo/man-scientist-examining-womans-brain-by-brainwave-scanning-headset-in-laboratory.jpg?s=612x612&w=0&k=20&c=U1pwc6V9jj-MzGX_FtSiLIRdWR70ybgKPOFVnrBVTgs=" alt="Advanced Analysis" class="w-full rounded-lg shadow-lg hover-scale">
+            </div>
+        </div>
+
+             <!-- Pricing Section -->
+        <div id="pricing" class="mb-12" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="text-3xl font-bold text-center mb-12">Choose Your Analysis Package</h2>
+            <div class="flex flex-wrap justify-center">
+                <div class="w-full sm:w-1/2 lg:w-1/3 p-4">
+                    <div class="bg-white shadow-lg rounded-lg p-6 border-2 gradient-border box-shadow-hover h-full flex flex-col">
+                        <h2 class="text-2xl font-bold mb-2 text-center">Basic Analysis</h2>
+                        <p class="text-gray-700 mb-4 text-center text-3xl font-bold">$20</p>
+                        <ul class="mb-6 text-gray-700">
+                            <li class="mb-2 flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Frequency band analysis
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Artifact detection
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Basic reporting
+                            </li>
+                        </ul>
+                        <a href="{{ url_for('upload_file') }}" class="mt-auto block mx-auto bg-gradient-to-r from-red-500 to-blue-500 text-white font-bold py-2 px-4 rounded hover:scale-105 transition-transform pulse">Explore</a>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/3 p-4">
+                    <div class="bg-white shadow-lg rounded-lg p-6 border-2 border-gray-300 box-shadow-hover h-full flex flex-col">
+                        <h2 class="text-2xl font-bold mb-2 text-center">Intermediate Seizure Analysis</h2>
+                        <p class="text-gray-700 mb-4 text-center text-3xl font-bold">$30</p>
+                        <ul class="mb-6 text-gray-700">
+                            <li class="mb-2 flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Everything in Basic
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Seizure detection
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Event classification
+                            </li>
+                        </ul>
+                        <p class="text-gray-600 text-center mt-auto">Coming Soon</p>
+                    </div>
+                </div>
+                <div class="w-full sm:w-1/2 lg:w-1/3 p-4">
+                    <div class="bg-white shadow-lg rounded-lg p-6 border-2 border-gray-300 box-shadow-hover h-full flex flex-col">
+                        <h2 class="text-2xl font-bold mb-2 text-center">Advanced EEG Analysis</h2>
+                        <p class="text-gray-700 mb-4 text-center text-3xl font-bold">$50</p>
+                        <ul class="mb-6 text-gray-700">
+                            <li class="mb-2 flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Everything in Intermediate
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Source localization
+                            </li>
+                            <li class="mb-2 flex items-start">
+                                <svg class="h-5 w-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Connectivity analysis
+                            </li>
+                        </ul>
+                        <p class="text-gray-600 text-center mt-auto">Coming Soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+  <!-- Video Demo Section -->
+  <div class="mb-24 text-center" data-aos="zoom-in" data-aos-delay="100">
+    <h2 class="text-3xl font-bold mb-6">See How It Works</h2>
+    <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">Watch our demonstration video to understand how our EEG analysis process works and the types of insights you'll receive.</p>
+    <div class="w-full max-w-4xl mx-auto p-4 bg-gray-100 rounded-lg shadow-lg">
+        <div class="relative" style="padding-bottom: 56.25%;">
+            <!-- Replace with your actual video -->
+            <iframe class="absolute inset-0 w-full h-full rounded" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="EEG Analysis Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Contact Section -->
+        <div class="text-center mt-16 mb-12" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-6">Questions?</h2>
+            <p class="text-lg text-gray-700 mb-8">Contact us for more information about our EEG analysis services</p>
+            <a href="mailto:contact@eeganalysis.com" class="bg-gradient-to-r from-red-500 to-blue-500 text-white font-bold py-3 px-8 rounded-full hover:opacity-90 transition-opacity">Contact Us</a>
+        </div>
+    </div>
+
+    <footer class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-600">
+            <p>© 2025 EEG Analysis Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+        });
+    </script>
+</body>
+</html>
